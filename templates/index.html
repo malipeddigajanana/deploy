@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Live Video Streaming</title>
+    <style>
+      .container {
+        text-align: center;
+      }
+      #videoFeed {
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <h3 class="mt-5">Live Video Streaming</h3>
+          <img id="videoFeed" src="" width="50%" alt="Live Video Feed">
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Function to update the image source with the video feed
+      function updateVideoFeed() {
+        var img = document.getElementById('videoFeed');
+        img.src = "/video_feed?" + new Date().getTime(); // Append timestamp to avoid caching
+      }
+
+      // Update the video feed every second
+      setInterval(updateVideoFeed, 1000);
+    </script>
+  </body>
+</html>
